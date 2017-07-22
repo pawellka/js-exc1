@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.css" rel="stylesheet" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="form-group">
+            <label>Select base class</label>
+            <input class="form-control types-list"/>
+        </div>
+
+        <div class="form-group">
+            <label>Add interface</label>
+            <input class="form-control interfaces-list"/>
+        </div>
+
+        <div class="form-group active">
+            <label>Add destructor</label>
+            <input class="form-check-input" type="checkbox" checked>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            var availableInterfaces = [
+                "Int1", "Int2"
+            ];
+
+            var availableTypes = [
+                "Type1", "Type2"
+            ];
+
+            $(".types-list").autocomplete({
+                source: availableTypes
+            });
+
+            $(".interfaces-list").autocomplete({
+                source: availableInterfaces
+            });
+        });
+    </script>
+</body>
+
+</html>
